@@ -16,10 +16,13 @@
 python Section_B/sectionB_1.py
 ```
 עבור הרצה של קובץ csv יש לשים בקובץ את השורה:  
-compute_hourly_averages("Section_B/time_series.csv", "Section_B/hourly_averages_no_split.csv")   
+```python
+compute_hourly_averages("Section_B/time_series.csv", "Section_B/hourly_averages_no_split.csv")
+```   
 עבור הרצה של קובץ parquet יש לשים בקובץ את השורה:    
+```python
 compute_hourly_averages("Section_B/time_series.parquet", "Section_B/hourly_averages_no_split_parquet.csv")   
-
+```
 **הפלט:**  
 עבור קובץ CSV:  
 Section_B/hourly_averages_no_split.csv  
@@ -35,11 +38,14 @@ Section_B/hourly_averages_no_split_parquet.csv
 ```bash
 python Section_B/sectionB_2.py
 ```
-עבור הרצה של קובץ csv יש לשים בקובץ את השורה הזו:  
+עבור הרצה של קובץ csv יש לשים בקובץ את השורה הזו:
+```python  
 generate_hourly_averages_from_file("Section_B/time_series.csv")
-
+```
 עבור הרצה של קובץ parquet, יש לשים בקובץ את השורה הזו:  
+```python
 generate_hourly_averages_from_file("Section_B/time_series.parquet", daily_parts_dir='Section_B/daily_parts_parquet', daily_avgs_dir='Section_B/daily_avgs_parquet', output_file='Section_B/final_hourly_averages_split_parquet.csv')
+```
 
 לאחר ההרצה יווצרו תיקיות חדשות בהתאם לסוג הקלט:
 
