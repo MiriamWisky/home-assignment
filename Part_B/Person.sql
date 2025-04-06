@@ -7,9 +7,9 @@ CREATE TABLE family.Person (
     Personal_Name TEXT,
     Family_Name   TEXT,
     Gender        TEXT,
-    Father_Id     INT,
-    Mother_Id     INT,
-    Spouse_Id     INT
+    Father_Id     INT REFERENCES family.Person(Person_Id),
+    Mother_Id     INT REFERENCES family.Person(Person_Id),
+    Spouse_Id     INT REFERENCES family.Person(Person_Id)
 );
 
 

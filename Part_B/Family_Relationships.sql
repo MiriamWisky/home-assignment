@@ -1,6 +1,12 @@
 -- Builds the `family.Family_Relationships` table with all first-degree relationships (parent, child, sibling, spouse).
+CREATE TABLE family.Family_Relationships (
+    Person_Id INT REFERENCES family.Person(Person_Id),
+    Relative_Id INT REFERENCES family.Person(Person_Id),
+    Connection_Type TEXT,
+    PRIMARY KEY (Person_Id, Relative_Id, Connection_Type)
+);
 
-CREATE TABLE family.Family_Relationships AS
+INSERT INTO family.Family_Relationships (Person_Id, Relative_Id, Connection_Type)
 SELECT
     p.Person_Id,
     p.Father_Id AS Relative_Id,
@@ -43,8 +49,8 @@ SELECT
     END AS Connection_Type
 FROM family.Person a
 JOIN family.Person b
-    ON a.Father_Id = b.Father_Id
-    OR a.Mother_Id = b.Mother_Id -- Allowing siblings from one parent.
+    ON (a.Father_Id = b.Father_Id
+    OR a.Mother_Id = b.Mother_Id) -- Allowing siblings from one parent.
     AND a.Person_Id <> b.Person_Id
 
 UNION ALL
