@@ -44,5 +44,6 @@ print(get_top_n_errors("Section_A/chunks_excel", N))
 **מקום** - מחזיקים את N הקודים - O(N).    
   
 ### **זמן ריצה כולל** - O(m) + O(klogN).  
+### **סיבוכיות מקום** - O(k).  
   
 </div>
